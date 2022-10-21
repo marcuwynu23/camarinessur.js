@@ -1,0 +1,24 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>
+			Run dev tools and check the console
+		</h1>
+		<script src="dist/citybarangayph.min.js"></script>
+		<script>
+			getAllCityByProvinceCode((data) => {
+				console.log(data.citymunCode, data.citymunDesc);
+				if (data.citymunCode === '051734') {
+					getAllBarangayByCityCode(data.citymunCode, (d) => {
+						console.log(d.brgyCode, d.brgyDesc);
+					})
+				}
+			})
+		</script>
+
+	</body>
+</html>
