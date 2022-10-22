@@ -3,20 +3,33 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
+		<link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
 	</head>
 	<body>
-		<h1>
-			Run dev tools and check the console
-		</h1>
+		<h1 class="fw-bolder text-center">Example with select tag</h1>
+		<div class="d-flex justify-content-center form-group">
+			<label for="citymun">City/Municipality</label>
+			<select name="citymun" id="citymun"></select>
+			<br>
+			<label for="brgy">Barangay</label>
+			<select name="brgy" id="brgy"></select>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="dist/camarinessur.min.js"></script>
 		<script>
-			getAllCityByProvinceCode((data) => {
-				console.log(data.citymunCode, data.citymunDesc);
-				if (data.citymunCode === '051734') {
-					getAllBarangayByCityCode(data.citymunCode, (d) => {
-						console.log(d.brgyCode, d.brgyDesc);
-					})
+
+			getAllCityByProvinceCodeList((data) => {
+				for (var d of data) {
+					$("#citymun").append(`<option value="${d.citymunCode}">${d.citymunDesc}</option>`)
 				}
+			})
+			$("#citymun").on("change", function () {
+				getAllBarangayByCityCodeList($(this).val(), (data) => {
+					for (var d of data) {
+						$("#brgy").append(`<option value="${d.brgyCode}">${d.brgyDesc}</option>`)
+					}
+				})
+				$("#brgy").empty()
 			})
 		</script>
 
