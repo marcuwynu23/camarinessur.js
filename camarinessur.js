@@ -1,6 +1,4 @@
 
-
-
 function getAllCityByProvinceCodeList(callback) {
 	fetchData("https://ph-address.onrender.com/ph/citymun?regCode=05&provCode=0517", (data) => {
 		callback(data)

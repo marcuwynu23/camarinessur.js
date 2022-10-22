@@ -1,1 +1,1 @@
-- uglifyjs camarinessur.js -o dist\camarinessur.min.js 
+- uglifyjs camarinessur.js -o dist\0.0.1\camarinessur.min.js 
