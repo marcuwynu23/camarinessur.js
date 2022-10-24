@@ -1,6 +1,6 @@
 
 function getAllCityByProvinceCodeList(callback) {
-	fetchData("https://phaddress.onrender.com/api/v1/ph/citymun?regCode=05&provCode=0517", (data) => {
+	fetchData("https://phaddress.onrender.com/api/v1/ph/citymuns?regCode=05&provCode=0517", (data) => {
 		callback(data)
 	})
 }
@@ -22,7 +22,7 @@ function getAllBarangayByCityCodeList(code, callback) {
 
 
 function getAllCityByProvinceCode(callback) {
-	fetchData("https://phaddress.onrender.com/api/v1/ph/citymun?regCode=05&provCode=0517", (data) => {
+	fetchData("https://phaddress.onrender.com/api/v1/ph/citymuns?regCode=05&provCode=0517", (data) => {
 		for (var d of data) {
 			callback(d)
 		}
