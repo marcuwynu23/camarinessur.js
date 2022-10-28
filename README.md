@@ -1,6 +1,6 @@
 # camarinessur.js
 
-library to get data API specific for province of camarines sur province list of cities/municipalities and its barangay
+library to get data API specific for province of camarines sur province list of cities/municipalities and its barangays
 
 ```
 <script src="https://cdn.jsdelivr.net/gh/marcuwynu23/camarinessur.js@latest/dist/camarinessur.min.js"></script>
